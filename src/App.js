@@ -15,7 +15,14 @@ function App() {
   return (
     <>
       <Header></Header>
-      <ShoppingItem></ShoppingItem>
+      {items.map((item) => (
+        <ShoppingItem
+          key={item.id}
+          title={item.title}
+          price={item.price}
+        ></ShoppingItem>
+      ))}
+
       <Footer></Footer>
     </>
   );

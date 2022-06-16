@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ShoppingItem() {
+function ShoppingItem({ title, price }) {
   const [count, setCount] = useState(0);
 
   const increaseCounter = () => {
@@ -20,8 +20,8 @@ function ShoppingItem() {
   return (
     <>
       <section>
-        <h2>Shopping Item</h2>
-        <h3>??? per piece</h3>
+        <h2>{title}</h2>
+        <h3>{price} per piece</h3>
         <button type="button" onClick={increaseCounter}>
           +
         </button>
