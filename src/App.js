@@ -21,7 +21,7 @@ function App() {
   };
 
   return (
-    <>
+    <section className="min-h-screen bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500">
       <Header></Header>
       {items.map((item) => (
         <ShoppingItem
@@ -33,7 +33,7 @@ function App() {
         ></ShoppingItem>
       ))}
       <Footer></Footer>
-    </>
+    </section>
   );
 }
 
