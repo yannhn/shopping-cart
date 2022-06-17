@@ -12,6 +12,12 @@ function App() {
     { id: nanoid(), title: "Avocados", price: 1.9, amount: 0 },
   ]);
 
+  const initialPrice = 0;
+  const total = items.reduce(
+    (accumulator, current) => accumulator + current.price * current.amount,
+    initialPrice
+  );
+
   return (
     <>
       <Header></Header>
@@ -21,6 +27,7 @@ function App() {
           title={item.title}
           price={item.price}
           amount={item.amount}
+          totalPrice={total}
         ></ShoppingItem>
       ))}
 
