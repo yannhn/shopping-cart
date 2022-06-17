@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-function ShoppingItem({ title, price, total }) {
-  const [count, setCount] = useState(0);
+function ShoppingItem({ title, price, amount, handleDelete }) {
+  const [count, setCount] = useState(amount);
 
   const increaseCounter = () => {
     setCount(() => count + 1);
@@ -20,9 +20,11 @@ function ShoppingItem({ title, price, total }) {
   return (
     <>
       <section>
-        <h2>Total: {total}</h2>
-        <h3>{title}</h3>
-        <h4>{price} per piece</h4>
+        <button type="button" onClick={handleDelete}>
+          Delete
+        </button>
+        <h2>{title}</h2>
+        <h3>{price} per piece</h3>
         <button type="button" onClick={increaseCounter}>
           +
         </button>
@@ -33,7 +35,7 @@ function ShoppingItem({ title, price, total }) {
           RESET
         </button>
         <p>Amount: {count}</p>
-        <p>Total: {(count * price).toFixed(2)}</p>
+        <p>Total: {(count * price).toFixed(2)} €</p>
       </section>
     </>
   );

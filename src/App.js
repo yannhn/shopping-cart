@@ -12,11 +12,13 @@ function App() {
     { id: nanoid(), title: "Avocados", price: 1.9, amount: 0 },
   ]);
 
-  const initialPrice = 0;
-  const total = items.reduce(
-    (accumulator, current) => accumulator + current.price * current.amount,
-    initialPrice
-  );
+  const handleDelete = (id) => {
+    setItems((prevEvents) => {
+      return prevEvents.filter((event) => {
+        return id !== event.id;
+      });
+    });
+  };
 
   return (
     <>
@@ -27,10 +29,9 @@ function App() {
           title={item.title}
           price={item.price}
           amount={item.amount}
-          totalPrice={total}
+          handleDelete={() => handleDelete(item.id)}
         ></ShoppingItem>
       ))}
-
       <Footer></Footer>
     </>
   );
