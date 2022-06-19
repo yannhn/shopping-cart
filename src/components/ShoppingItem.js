@@ -1,22 +1,12 @@
-import { useState } from "react";
-
-function ShoppingItem({ title, price, amount, handleDelete }) {
-  const [count, setCount] = useState(amount);
-
-  const increaseCounter = () => {
-    setCount(() => count + 1);
-  };
-
-  const decreaseCounter = () => {
-    if (count > 0) {
-      setCount(() => count - 1);
-    }
-  };
-
-  const resetCounter = () => {
-    setCount(0);
-  };
-
+function ShoppingItem({
+  title,
+  price,
+  amount,
+  handleDelete,
+  handleIncrease,
+  handleDecrease,
+  // handleReset,
+}) {
   return (
     <>
       <section className="bg-white rounded shadow-md shadow-indigo-600/40 md:container md:mx-auto">
@@ -28,7 +18,7 @@ function ShoppingItem({ title, price, amount, handleDelete }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 mr-0"
+              className="h-5 w-5 mr-0"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -50,28 +40,28 @@ function ShoppingItem({ title, price, amount, handleDelete }) {
           <button
             type="button"
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-            onClick={increaseCounter}
+            onClick={handleIncrease}
           >
             +
           </button>
           <button
             type="button"
             className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-            onClick={decreaseCounter}
+            onClick={handleDecrease}
           >
             -
           </button>
-          <button
+          {/* <button
             type="button"
             className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 rounded-l"
-            onClick={resetCounter}
+            onClick={handleReset}
           >
             RESET
-          </button>
+          </button> */}
         </section>
         <section className="divide-y-2 divide-dotted flex-col justify-center items-center">
-          <p className="items-center">Amount: {count}</p>
-          <p className="items-center">Total: {(count * price).toFixed(2)} €</p>
+          <p className="items-center">Amount: {amount}</p>
+          <p className="items-center">Total: {(amount * price).toFixed(2)} €</p>
         </section>
       </section>
     </>
