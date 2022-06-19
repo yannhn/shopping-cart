@@ -5,6 +5,7 @@ import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
 import ShoppingItem from "./components/ShoppingItem";
 import TotalPrice from "./components/TotalPrice";
+import InputNewItem from "./components/InputNewItem";
 
 function App() {
   const [items, setItems] = useState([
@@ -21,7 +22,7 @@ function App() {
         return item;
       }
     });
-    if (!newItems.find((item) => item.amount < 0)) {
+    if (newItems.reduce((a, b) => a + b.amount * b.price, 0) <= 30) {
       setItems(newItems);
     }
   };
@@ -64,7 +65,16 @@ function App() {
     });
   };
 
-  const totalPrice = items.reduce((a, b) => a + b.amount * b.price, 0);
+  const addNewItem = (title, price) => {
+    const newItems = [...items, { id: nanoid(), title, price, amount: 0 }];
+    setItems(newItems);
+  };
+
+  const totalPrice = items.reduce(
+    (previousTotal, currentTotal) =>
+      previousTotal + currentTotal.amount * currentTotal.price,
+    0
+  );
   const fixedPrice = totalPrice.toFixed(2);
 
   return (
@@ -83,6 +93,7 @@ function App() {
           handleDelete={() => handleDelete(item.id)}
         ></ShoppingItem>
       ))}
+      <InputNewItem addNewItem={addNewItem}></InputNewItem>
       <Footer></Footer>
     </section>
   );
