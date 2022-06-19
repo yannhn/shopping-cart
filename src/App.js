@@ -21,7 +21,9 @@ function App() {
         return item;
       }
     });
-    setItems(newItems);
+    if (!newItems.find((item) => item.amount < 0)) {
+      setItems(newItems);
+    }
   };
 
   const handleDecrease = (id) => {
