@@ -10,7 +10,10 @@ function InputNewItem({ addNewItem }) {
 
   return (
     <>
-      <form className="form flex justify-center" onSubmit={handleSubmit}>
+      <form
+        className="form flex justify-center text-2xl"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="input-name">Name:</label>
         <input
           id="input-name"
