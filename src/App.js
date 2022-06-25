@@ -3,7 +3,6 @@ import { nanoid } from "nanoid";
 import Header from "./components/UI/Header";
 import Footer from "./components/UI/Footer";
 import ShoppingItem from "./components/ShoppingItem";
-import TotalPrice from "./components/TotalPrice";
 import InputNewItem from "./components/InputNewItem";
 
 function App() {
@@ -79,7 +78,6 @@ function App() {
   return (
     <section className=" bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500">
       <Header></Header>
-      <TotalPrice fixedPrice={fixedPrice}></TotalPrice>
       {items.map((item) => (
         <ShoppingItem
           key={item.id}
@@ -93,7 +91,7 @@ function App() {
         ></ShoppingItem>
       ))}
       <InputNewItem addNewItem={addNewItem}></InputNewItem>
-      <Footer></Footer>
+      <Footer fixedPrice={fixedPrice}></Footer>
     </section>
   );
 }

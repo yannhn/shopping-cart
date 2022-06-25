@@ -9,7 +9,7 @@ function ShoppingItem({
 }) {
   return (
     <>
-      <section className="w-full max-w-xs m-auto ">
+      <section className="w-full max-w-xs m-auto">
         <section className="bg-white rounded shadow-md md:container mt-4 mb-4">
           <section className="flex justify-end">
             <button
@@ -36,20 +36,20 @@ function ShoppingItem({
           <section>
             <h2 className="flex justify-center text-2xl font-bold">{title}</h2>
             <h3 className="flex justify-center text-lg font-medium">
-              {price} per piece
+              {price} € per piece
             </h3>
           </section>
-          <section className="flex justify-center">
+          <section className="flex justify-center gap-4">
             <button
               type="button"
-              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-6 m-2 border border-blue-500 hover:border-transparent rounded"
+              className=" bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               onClick={handleIncrease}
             >
               +
             </button>
             <button
               type="button"
-              className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-6 m-2 border border-blue-500 hover:border-transparent rounded"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               onClick={handleDecrease}
             >
               -
