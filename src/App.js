@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { nanoid } from "nanoid";
 import Header from "./components/UI/Header";
@@ -78,7 +77,7 @@ function App() {
   const fixedPrice = totalPrice.toFixed(2);
 
   return (
-    <section className="min-h-screen bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500">
+    <section className=" bg-gradient-to-t from-blue-100 via-blue-300 to-blue-500">
       <Header></Header>
       <TotalPrice fixedPrice={fixedPrice}></TotalPrice>
       {items.map((item) => (

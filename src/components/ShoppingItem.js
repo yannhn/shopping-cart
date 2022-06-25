@@ -9,7 +9,7 @@ function ShoppingItem({
 }) {
   return (
     <>
-      <section className="flex justify-center mx-96 min-w-fit">
+      <section className="flex justify-center">
         <section className="bg-white rounded shadow-md shadow-indigo-600/40 md:container m-4 w-64">
           <section className="flex justify-end">
             <button

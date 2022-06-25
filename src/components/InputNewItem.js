@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 function InputNewItem({ addNewItem }) {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -8,12 +9,11 @@ function InputNewItem({ addNewItem }) {
     addNewItem(name, price);
   };
 
+  // TODO: finish styling
+
   return (
     <>
-      <form
-        className="form flex justify-center text-2xl"
-        onSubmit={handleSubmit}
-      >
+      <form className="flex-col justify-center" onSubmit={handleSubmit}>
         <label htmlFor="input-name">Name:</label>
         <input
           id="input-name"
