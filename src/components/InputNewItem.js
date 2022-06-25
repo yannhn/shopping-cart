@@ -9,8 +9,6 @@ function InputNewItem({ addNewItem }) {
     addNewItem(name, price);
   };
 
-  // TODO: finish styling
-
   return (
     <section className="w-full max-w-xs m-auto">
       <form

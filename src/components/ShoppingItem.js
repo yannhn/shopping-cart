@@ -5,7 +5,6 @@ function ShoppingItem({
   handleDelete,
   handleIncrease,
   handleDecrease,
-  // handleReset,
 }) {
   return (
     <>
@@ -54,13 +53,6 @@ function ShoppingItem({
             >
               -
             </button>
-            {/* <button
-            type="button"
-            className="bg-red-400 hover:bg-red-500 text-gray-800 font-bold py-2 px-4 rounded-l"
-            onClick={handleReset}
-          >
-            RESET
-          </button> */}
           </section>
           <section className="divide-y-2 divide-dotted flex-col justify-center items-center">
             <p className="items-center flex justify-center text-xl">

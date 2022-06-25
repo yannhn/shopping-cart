@@ -38,23 +38,6 @@ function App() {
     }
   };
 
-  // FIXME: Fix reset
-
-  // const handleReset = (id) => {
-  //   const newItems = items.map((item) => {
-  //     if (item.id === id) {
-  //       return {
-  //         ...item,
-  //         amount: item.amount - item.amount,
-  //         price: item.price - item.price,
-  //       };
-  //     } else {
-  //       return item;
-  //     }
-  //   });
-  //   setItems(newItems);
-  // };
-
   const handleDelete = (id) => {
     setItems((prevEvents) => {
       return prevEvents.filter((event) => {
