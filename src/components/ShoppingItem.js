@@ -9,8 +9,8 @@ function ShoppingItem({
 }) {
   return (
     <>
-      <section className="flex justify-center">
-        <section className="bg-white rounded shadow-md shadow-indigo-600/40 md:container m-4 w-64">
+      <section className="w-full max-w-xs m-auto ">
+        <section className="bg-white rounded shadow-md md:container mt-4 mb-4">
           <section className="flex justify-end">
             <button
               type="button"
